@@ -23,6 +23,7 @@
 <script src="/admin/assets/vendor/simple-datatables/simple-datatables.js"></script>
 <script src="/admin/assets/vendor/tinymce/tinymce.min.js"></script>
 <script src="/admin/assets/vendor/php-email-form/validate.js"></script>
+<script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
 
 <!-- Template Main JS File -->
 <script src="/admin/assets/js/main.js"></script>
