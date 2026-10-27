@@ -4,6 +4,9 @@
 <head>
     <meta charset="utf-8">
     <title>PGRI Cisurupan | @yield('title')</title>
+    <!-- Favicons -->
+    <link href="/assets/img/about-2.png" rel="icon">
+
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">

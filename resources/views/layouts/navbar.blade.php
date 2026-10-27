@@ -25,8 +25,9 @@
                     <div class="col-lg-4 text-center text-lg-end">
                         <div class="d-flex justify-content-end">
                             <div class="d-flex align-items-center small">
-                                <a href="#" class="login-btn text-body me-3 pe-3"> <span>Login</span></a>
-                                <a href="#" class="text-body me-3"> Register</a>
+                                <a href="{{ route('login')}}" class="login-btn text-body me-3 pe-3">
+                                    <span>Login</span></a>
+                                {{-- <a href="#" class="text-body me-3"> Register</a> --}}
                             </div>
                             <div class="d-flex pe-3">
                                 <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-facebook-f"></i></a>

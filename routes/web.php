@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -19,3 +20,5 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/gallery', 'gallery')->name('gallery');
     Route::get('/team', 'team')->name('team');
 });
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
