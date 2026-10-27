@@ -18,7 +18,9 @@ class ScheduleFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'schedule_name' => $this->faker->sentence(),
+            'schedule_date' => $this->faker->date(),
+            'schedule_description' => $this->faker->paragraph(),
         ];
     }
 }

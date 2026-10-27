@@ -55,6 +55,7 @@
                             <a href="/about" class="nav-item nav-link">Tentang</a>
                             <a href="/team" class="nav-item nav-link">Kepengurusan</a>
                             <a href="/blog" class="nav-item nav-link">Berita</a>
+                            <a href="/schedule" class="nav-item nav-link">Agenda</a>
                             <a href="/gallery" class="nav-item nav-link">Gallery</a>
                             <a href="/contact" class="nav-item nav-link">Kontak</a>
                             <div class="nav-btn ps-3">

@@ -2,12 +2,12 @@
 @section('title', 'Tentang Edit')
 @section('content')
 <div class="pagetitle">
-    <h1>Blank Page</h1>
+    <h1>Tentang</h1>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item">Pages</li>
-            <li class="breadcrumb-item active">Blank</li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('about.index') }}">Tentang</a></li>
+            <li class="breadcrumb-item active">Edit</li>
         </ol>
     </nav>
 </div><!-- End Page Title -->

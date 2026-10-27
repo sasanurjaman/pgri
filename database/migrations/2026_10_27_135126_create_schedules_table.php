@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
+            $table->string('schedule_name');
+            $table->date('schedule_date');
+            $table->string('schedule_description');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

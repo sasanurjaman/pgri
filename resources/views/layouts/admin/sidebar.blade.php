@@ -46,7 +46,23 @@
                     </a>
                 </li>
             </ul>
-        </li><!-- End Team Nav -->
+        </li><!-- End Blog Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#schedule" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-calendar"></i><span>Agenda</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="schedule" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="{{ route('schedule.index')}}">
+                        <i class="bi bi-circle"></i><span>Daftar Agenda</span>
+                    </a>
+                    <a href="{{ route('schedule.create')}}">
+                        <i class="bi bi-circle"></i><span>Tambah Agenda</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Schedule Nav -->
 
 
         <li class="nav-heading">Pages</li>
@@ -54,7 +70,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="/" target="_blank">
                 <i class="bi bi-globe"></i>
-                <span>lihat website</span>
+                <span>Lihat website</span>
             </a>
         </li><!-- End Tentang Nav -->
 

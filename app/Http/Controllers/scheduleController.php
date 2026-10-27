@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ScheduleRequest;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
 
-class scheduleController extends Controller
+class ScheduleController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view('admin.schedule.index', [
+            'schedules' => Schedule::latest()->get()
+        ]);
     }
 
     /**
@@ -20,15 +23,19 @@ class scheduleController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.schedule.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ScheduleRequest $request)
     {
-        //
+        $validatedData = $request->validated();
+
+        Schedule::create($validatedData);
+
+        return redirect()->route('schedule.index')->with('success', 'Berhasil menambahkan agenda.');
     }
 
     /**
@@ -44,15 +51,19 @@ class scheduleController extends Controller
      */
     public function edit(Schedule $schedule)
     {
-        //
+        return view('admin.schedule.edit', compact('schedule'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Schedule $schedule)
+    public function update(ScheduleRequest $request, Schedule $schedule)
     {
-        //
+        $validatedData = $request->validated();
+
+        $schedule->update($validatedData);
+
+        return redirect()->route('schedule.index')->with('success', 'Berhasil mengupdate agenda.');
     }
 
     /**
@@ -60,6 +71,8 @@ class scheduleController extends Controller
      */
     public function destroy(Schedule $schedule)
     {
-        //
+        $schedule->delete();
+
+        return redirect()->route('schedule.index')->with('success', 'Berhasil menghapus agenda.');
     }
 }

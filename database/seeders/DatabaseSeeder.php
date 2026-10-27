@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             AboutSeeder::class,
             TeamSeeder::class,
             BlogSeeder::class,
+            ScheduleSeeder::class,
         ]);
     }
 }

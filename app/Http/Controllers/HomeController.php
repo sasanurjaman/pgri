@@ -50,4 +50,8 @@ class HomeController extends Controller
     {
         return View('web/team');
     }
+    public function schedule()
+    {
+        return View('web/schedule');
+    }
 }
