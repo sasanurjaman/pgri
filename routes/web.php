@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +24,5 @@ Route::controller(HomeController::class)->group(function () {
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::resource('admin/about', AboutController::class);
+Route::resource('admin/about', AboutController::class)->only(['index', 'edit', 'update']);
+Route::resource('admin/team', TeamController::class);

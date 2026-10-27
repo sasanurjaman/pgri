@@ -39,12 +39,4 @@ class AboutController extends Controller
 
         return redirect()->route('about.index')->with('success', $about->about_title . ' berhasil diperbarui.');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(About $about)
-    {
-        //
-    }
 }
