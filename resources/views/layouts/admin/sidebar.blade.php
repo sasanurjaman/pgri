@@ -14,22 +14,51 @@
                 <i class="bi bi-info-circle"></i>
                 <span>Tentang</span>
             </a>
-        </li><!-- End Dashboard Nav -->
+        </li><!-- End Tentang Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+            <a class="nav-link collapsed" data-bs-target="#team" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-people"></i><span>Kepengurusan</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <ul id="team" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="components-alerts.html">
-                        <i class="bi bi-circle"></i><span>Alerts</span>
+                    <a href="{{ route('team.index')}}">
+                        <i class="bi bi-circle"></i><span>Daftar Kepengurusan</span>
+                    </a>
+                    <a href="{{ route('team.create')}}">
+                        <i class="bi bi-circle"></i><span>Tambah Kepengurusan</span>
                     </a>
                 </li>
             </ul>
-        </li><!-- End Components Nav -->
+        </li><!-- End Team Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#blog" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-newspaper"></i><span>Berita</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="blog" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="{{ route('blog.index')}}">
+                        <i class="bi bi-circle"></i><span>Daftar Berita</span>
+                    </a>
+                    <a href="{{ route('blog.create')}}">
+                        <i class="bi bi-circle"></i><span>Tambah Berita</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Team Nav -->
+
 
         <li class="nav-heading">Pages</li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="/" target="_blank">
+                <i class="bi bi-globe"></i>
+                <span>lihat website</span>
+            </a>
+        </li><!-- End Tentang Nav -->
+
+
 
     </ul>
 

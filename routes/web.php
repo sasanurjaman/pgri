@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TeamController;
@@ -25,4 +26,5 @@ Route::controller(HomeController::class)->group(function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::resource('admin/about', AboutController::class)->only(['index', 'edit', 'update']);
-Route::resource('admin/team', TeamController::class);
+Route::resource('admin/team', TeamController::class)->except(['show']);
+Route::resource('admin/blog', BlogController::class)->except(['show']);
