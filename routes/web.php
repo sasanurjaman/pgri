@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\TeamController;
@@ -31,3 +32,4 @@ Route::resource('admin/about', AboutController::class)->only(['index', 'edit', '
 Route::resource('admin/team', TeamController::class)->except(['show']);
 Route::resource('admin/blog', BlogController::class)->except(['show']);
 Route::resource('admin/schedule', ScheduleController::class)->except(['show']);
+Route::resource('admin/gallery', GalleryController::class)->except(['show']);

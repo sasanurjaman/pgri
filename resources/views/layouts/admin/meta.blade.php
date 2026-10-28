@@ -28,7 +28,6 @@
   <link href="/admin/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="/admin/assets/vendor/simple-datatables/style.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
-
   <!-- Template Main CSS File -->
   <link href="/admin/assets/css/style.css" rel="stylesheet">
 

@@ -64,6 +64,22 @@
             </ul>
         </li><!-- End Schedule Nav -->
 
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#gallery" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-images"></i><span>Galleri</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="gallery" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="{{ route('gallery.index')}}">
+                        <i class="bi bi-circle"></i><span>Daftar Galleri</span>
+                    </a>
+                    <a href="{{ route('gallery.create')}}">
+                        <i class="bi bi-circle"></i><span>Tambah Galleri</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Gallery Nav -->
+
 
         <li class="nav-heading">Pages</li>
 
