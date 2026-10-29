@@ -25,7 +25,7 @@
                 <div class="col-md-12">
                     <label for="about_title" class="form-label">Judul</label>
                     <div class="input-group has-validation">
-                        <input name="about_title" type="text" class="form-control" id="about_title"
+                        <input readonly name="about_title" type="text" class="form-control" id="about_title"
                             aria-describedby="inputGroupPrepend" value="{{ $about->about_title }}" required>
                         <div class="invalid-feedback">
                             Isi Judul.

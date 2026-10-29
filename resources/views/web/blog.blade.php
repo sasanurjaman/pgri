@@ -18,89 +18,76 @@
 <!-- Blog Start -->
 <div class="container-fluid blog py-5">
     <div class="container py-5">
+
+        {{-- Judul berita --}}
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-            <h4 class="text-primary">Berita</h4>
-            <h1 class="display-4 mb-4">Check out our latest stories</h1>
-            <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis
-                cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint
-                dolorem autem obcaecati, ipsam mollitia hic.
+
+            <h1 class="display-4 mb-4">Berita</h1>
+
+            <p class="mb-0">
+                Berita terkini seputar PGRI Cisurupan, kegiatan dan informasi terbaru di sekitar
             </p>
         </div>
-        <div class="blog-carousel owl-carousel">
-            <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
-                <div class="blog-img p-4 pb-0">
-                    <a href="#">
-                        <img src="img/feature-4.jpg" class="img-fluid w-100" alt="">
-                    </a>
-                </div>
-                <div class="blog-content p-4">
-                    <div class="blog-comment d-flex justify-content-between py-2 px-3 mb-4">
-                        <div class="small"><span class="fa fa-user text-primary me-2"></span> Martin.C</div>
-                        <div class="small"><span class="fa fa-calendar text-primary me-2"></span> 30 Dec 2025</div>
+
+        {{-- Grid berita tanpa Owl Carousel --}}
+        <div class="row g-4 mb-4">
+
+            @forelse ($blogs as $blog)
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="blog-item wow fadeInUp h-100" data-wow-delay="0.2s">
+
+                    {{-- Gambar berita --}}
+                    <div class="blog-img p-4 pb-0">
+                        <a href="#">
+                            @if ($blog->blog_image)
+                            <img src="{{ asset('storage/'. $blog->blog_image)}}" class="img-fluid w-100"
+                                style="height: 200px" alt="{{ $blog->blog_title}}">
+                            @else
+                            <img src="/assets/img/noimage.jpeg" class="img-fluid w-100"
+                                style="height: 200px; object-fit: cover" alt="no image">
+                            @endif
+                        </a>
                     </div>
-                    <a href="#" class="h4 d-inline-block mb-3">Full Body Home Workout</a>
-                    <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit
-                        eligendi? Quibusdam, laudantium.</p>
-                    <a href="#" class="btn btn-dark py-2 px-4 ms-2"> <span class="me-2">Read More</span> <i
-                            class="fa fa-arrow-right"></i></a>
+
+                    {{-- Konten berita --}}
+                    <div class="blog-content p-4">
+                        <div class="blog-comment d-flex justify-content-between py-2 px-3 mb-4">
+                            {{-- Tambahkan tanggal atau informasi berita jika diperlukan --}}
+                        </div>
+
+                        <a href="#" class="h4 d-inline-block mb-3">
+                            {{ $blog->blog_title }}
+                        </a>
+
+                        <p class="mb-3">
+                            {{ Str::limit(strip_tags($blog->blog_description), 100, '...') }}
+                        </p>
+
+                        <a href="#" class="btn btn-dark py-2 px-4 ms-2">
+                            <span class="me-2">Baca Selengkapnya</span>
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+
                 </div>
             </div>
-            <div class="blog-item wow fadeInUp" data-wow-delay="0.4s">
-                <div class="blog-img p-4 pb-0">
-                    <a href="#">
-                        <img src="img/feature-3.jpg" class="img-fluid w-100" alt="">
-                    </a>
-                </div>
-                <div class="blog-content p-4">
-                    <div class="blog-comment d-flex justify-content-between py-2 px-3 mb-4">
-                        <div class="small"><span class="fa fa-user text-primary me-2"></span> Martin.C</div>
-                        <div class="small"><span class="fa fa-calendar text-primary me-2"></span> 30 Dec 2025</div>
-                    </div>
-                    <a href="#" class="h4 d-inline-block mb-3">31-Day Fitness Calendar</a>
-                    <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit
-                        eligendi? Quibusdam, laudantium.</p>
-                    <a href="#" class="btn btn-dark py-2 px-4 ms-2"> <span class="me-2">Read More</span> <i
-                            class="fa fa-arrow-right"></i></a>
-                </div>
+            @empty
+            <div class="col-12 text-center">
+                <p class="text-muted">Belum ada berita yang tersedia.</p>
             </div>
-            <div class="blog-item wow fadeInUp" data-wow-delay="0.6s">
-                <div class="blog-img p-4 pb-0">
-                    <a href="#">
-                        <img src="img/feature-2.jpg" class="img-fluid w-100" alt="">
-                    </a>
-                </div>
-                <div class="blog-content p-4">
-                    <div class="blog-comment d-flex justify-content-between py-2 px-3 mb-4">
-                        <div class="small"><span class="fa fa-user text-primary me-2"></span> Martin.C</div>
-                        <div class="small"><span class="fa fa-calendar text-primary me-2"></span> 30 Dec 2025</div>
-                    </div>
-                    <a href="#" class="h4 d-inline-block mb-3">At Home Ab Workout</a>
-                    <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit
-                        eligendi? Quibusdam, laudantium.</p>
-                    <a href="#" class="btn btn-dark py-2 px-4 ms-2"> <span class="me-2">Read More</span> <i
-                            class="fa fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <div class="blog-item">
-                <div class="blog-img p-4 pb-0">
-                    <a href="#">
-                        <img src="img/feature-1.jpg" class="img-fluid w-100" alt="">
-                    </a>
-                </div>
-                <div class="blog-content p-4">
-                    <div class="blog-comment d-flex justify-content-between py-2 px-3 mb-4">
-                        <div class="small"><span class="fa fa-user text-primary me-2"></span> Martin.C</div>
-                        <div class="small"><span class="fa fa-calendar text-primary me-2"></span> 30 Dec 2025</div>
-                    </div>
-                    <a href="#" class="h4 d-inline-block mb-3">Full Body Home Workout</a>
-                    <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit
-                        eligendi? Quibusdam, laudantium.</p>
-                    <a href="#" class="btn btn-dark py-2 px-4 ms-2"> <span class="me-2">Read More</span> <i
-                            class="fa fa-arrow-right"></i></a>
-                </div>
-            </div>
+            @endforelse
+
         </div>
+
+        {{-- Pagination --}}
+        {{-- @if ($blogs->hasPages())
+        <div class="d-flex justify-content-center mt-5">
+        </div>
+        @endif --}}
+        {{ $blogs->links() }}
+
     </div>
 </div>
+
 <!-- Blog End -->
 @endsection

@@ -51,13 +51,36 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav mx-0 mx-lg-auto">
-                            <a href="/" class="nav-item nav-link active">Home</a>
-                            <a href="/about" class="nav-item nav-link">Tentang</a>
-                            <a href="/team" class="nav-item nav-link">Kepengurusan</a>
-                            <a href="/blog" class="nav-item nav-link">Berita</a>
-                            <a href="/schedule" class="nav-item nav-link">Agenda</a>
-                            <a href="/gallery" class="nav-item nav-link">Gallery</a>
-                            <a href="/contact" class="nav-item nav-link">Kontak</a>
+                            <a href="/" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">
+                                Home
+                            </a>
+
+                            <a href="/about" class="nav-item nav-link {{ request()->is('about*') ? 'active' : '' }}">
+                                Tentang
+                            </a>
+
+                            <a href="/team" class="nav-item nav-link {{ request()->is('team*') ? 'active' : '' }}">
+                                Kepengurusan
+                            </a>
+
+                            <a href="/blog" class="nav-item nav-link {{ request()->is('blog*') ? 'active' : '' }}">
+                                Berita
+                            </a>
+
+                            <a href="/schedule"
+                                class="nav-item nav-link {{ request()->is('schedule*') ? 'active' : '' }}">
+                                Agenda
+                            </a>
+
+                            <a href="/gallery"
+                                class="nav-item nav-link {{ request()->is('gallery*') ? 'active' : '' }}">
+                                Gallery
+                            </a>
+
+                            <a href="/contact"
+                                class="nav-item nav-link {{ request()->is('contact*') ? 'active' : '' }}">
+                                Kontak
+                            </a>
                             <div class="nav-btn ps-3">
                                 <button
                                     class="btn-search btn btn-primary btn-md-square mt-2 mt-lg-0 mb-4 mb-lg-0 flex-shrink-0"

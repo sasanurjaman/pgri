@@ -23,18 +23,7 @@
                 <div class="goal-content">
                     <h4 class="text-primary">Agenda</h4>
                     <h1 class="display-4 mb-4">Agenda Kegiatan</h1>
-                    <div class="goal-item d-flex p-4">
-                        <div class="d-flex me-4">
-                            <div class="bg-primary d-inline p-3" style="width: 80px; height: 80px;">
-                                <img src="/assets/img/icon-1.png" class="img-fluid" alt="">
-                            </div>
-                        </div>
-                        <div>
-                            <h4>Free Fitness Training</h4>
-                            <p class="text-white mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                Tempore est harum</p>
-                        </div>
-                    </div>
+                    @foreach ($schedules as $schedule)
                     <div class="goal-item d-flex p-4 mb-4">
                         <div class="d-flex me-4">
                             <div class="bg-primary d-inline p-3" style="width: 80px; height: 80px;">
@@ -42,12 +31,22 @@
                             </div>
                         </div>
                         <div>
-                            <h4>Cardio and Strength</h4>
-                            <p class="text-white mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                Tempore est harum</p>
+                            <h4>{{ $schedule->schedule_name}}</h4>
+                            <div class="mb-2 text-white small ">
+                                <i class="bi bi-calendar-event m-1"></i>
+                                {{ \Carbon\Carbon::parse($schedule->schedule_date)->translatedFormat('d F Y') }}
+                            </div>
+                            <p class="text-white mb-0">{!! $schedule->schedule_description!!}</p>
                         </div>
                     </div>
+                    @endforeach
                 </div>
+
+                {{ $schedules->links() }}
+                {{-- @if ($schedules->hasPages())
+                <div class="d-flex justify-content-center mt-5">
+                </div>
+                @endif --}}
             </div>
             <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
                 <div class="h-100">
@@ -56,6 +55,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 <!-- Fitness Goal End -->

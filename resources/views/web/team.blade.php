@@ -21,16 +21,17 @@
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
             <h4 class="text-primary">Kepengurusan</h4>
             <h1 class="display-4 mb-4">Pengurus PGRI Cabang Cisurupan</h1>
-            <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis
-                cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt
-                sint dolorem autem obcaecati, ipsam mollitia hic.
-            </p>
         </div>
         <div class="row gy-5 gy-lg-4 gx-4">
+            @foreach ($teams as $team)
             <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
                 <div class="team-item">
                     <div class="team-img">
-                        <img src="/assets/img/team-1.jpeg" class="img-fluid w-100" alt="Image">
+                        @if ($team->team_image)
+                        <img src="{{ asset('storage/' . $team->team_image)}}" class="img-fluid w-100" alt="Image">
+                        @else
+                        <img src="/assets/img/noimage.jpeg" class="img-fluid w-100" alt="no image">
+                        @endif
                         <div class="team-icon">
                             <a href="#" class="btn btn-primary btn-sm-square"><i class="fab fa-facebook-f"></i></a>
                             <a href="#" class="btn btn-primary btn-sm-square"><i class="fab fa-twitter"></i></a>
@@ -39,62 +40,14 @@
                         </div>
                     </div>
                     <div class="team-content">
-                        <h4>Hidayat, S.Pd, M.Pd, MCE.</h4>
-                        <p class="mb-0">Ketua Cabang PGRI Cisurupan</p>
+                        <h4>{{ $team->team_name }}</h4>
+                        <p class="mb-0">{{ $team->team_position }}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="team-item">
-                    <div class="team-img">
-                        <img src="/assets/img/team-2.jpeg" class="img-fluid w-100" alt="Image">
-                        <div class="team-icon">
-                            <a href="#" class="btn btn-primary btn-sm-square"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="btn btn-primary btn-sm-square"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="btn btn-primary btn-sm-square"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="btn btn-primary btn-sm-square"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-content">
-                        <h4>Budi Firdaus, S.Pd, M.Pd.</h4>
-                        <p class="mb-0">Wakil Ketua 1</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.6s">
-                <div class="team-item">
-                    <div class="team-img">
-                        <img src="/assets/img/team-3.jpg" class="img-fluid w-100" alt="Image">
-                        <div class="team-icon">
-                            <a href="#" class="btn btn-primary btn-sm-square"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="btn btn-primary btn-sm-square"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="btn btn-primary btn-sm-square"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="btn btn-primary btn-sm-square"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-content">
-                        <h4>Trainer Name</h4>
-                        <p class="mb-0">Profession</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.8s">
-                <div class="team-item">
-                    <div class="team-img">
-                        <img src="/assets/img/team-4.jpg" class="img-fluid w-100" alt="Image">
-                        <div class="team-icon">
-                            <a href="#" class="btn btn-primary btn-sm-square"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="btn btn-primary btn-sm-square"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="btn btn-primary btn-sm-square"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="btn btn-primary btn-sm-square"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-content">
-                        <h4>Trainer Name</h4>
-                        <p class="mb-0">Profession</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
+            {{ $teams->links()}}
         </div>
     </div>
 </div>

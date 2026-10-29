@@ -21,6 +21,15 @@
         <div class="row g-5">
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="footer-item">
+                    <h3 class="text-white mb-4"><img src="/assets/img/ZeroOne.ico" alt="Zero One" width="30"
+                            class="img-flud me-2">Zeo One
+                    </h3>
+                    <p class="mb-0">Zero OneTeknologi</p>
+                    <p class="mb-0">Telp 085722916809</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item">
                     <h4 class="text-white mb-4"> Contact Info</h4>
                     <div class="row g-2">
                         <div class="col-12">
